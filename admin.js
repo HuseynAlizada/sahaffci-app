@@ -106,7 +106,7 @@ function showImagePreview(input, imageUrl) {
     preview.style.boxShadow = "0 2px 6px rgba(0,0,0,0.15)";
     input.insertAdjacentElement("afterend", preview);
   }
-
+  
   if (imageUrl) {
     preview.src = imageUrl;
     preview.style.display = "block";
