@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahhafçi Bookcafe - A Home Away From Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&family=Playfair+Display:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+
+</head>
+
+<body>
+    <div class="page-transition"></div>
+
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="#" class="logo">
+                    <img src="images/sahhafchi-navbar.png" alt="Sahhafçi Bookcafe Logo">
+                </a>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <img src="images/image-8.jpeg" class="hero_image" alt="">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Welcome to Sahhafçi</h1>
+                    <p>A cozy bookcafe where you can feel at home</p>
+                    <a href="menu.html" class="btn">Explore Our Menu</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Story</h2>
+                    <div class="divider">
+                        <img src="images/divider.svg" alt="Decorative divider">
+                    </div>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Sahhafçi Bookcafe was born from a simple idea: creating a space that feels just like home.
+                            Our founder transformed his apartment into a unique coffee shop where comfort is the
+                            priority.</p>
+                        <p>When you enter Sahhafçi, we invite you to take off your shoes - just as you would at home.
+                            Surrounded by vintage decor and the warm ambiance of an old money aesthetic, you'll find
+                            yourself in a tranquil escape from the outside world.</p>
+                        <p>Every corner of our space is designed to make you feel comfortable, relaxed, and inspired -
+                            whether you're here to enjoy our carefully crafted menu, read a book, or simply unwind in
+                            good company.</p>
+                        <a href="menu.html" class="btn btn-outline">View Our Menu</a>
+                    </div>
+                    <div class="about-image">
+                        <div class="image-frame">
+                            <img src="images/image-8.jpeg" alt="Cafe interior with tables and bookshelves">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="experience">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Experience Sahhafçi</h2>
+                    <div class="divider">
+                        <img src="images/divider.svg" alt="Decorative divider">
+                    </div>
+                    <p class="section-subtitle">A unique blend of comfort, literature, and delicious treats</p>
+                </div>
+                <div class="experience-grid">
+                    <div class="experience-item large">
+                        <div class="experience-image">
+                            <img src="images/image-9.jpeg" class="experience-image1" alt="Cozy reading corner with colorful blanket">
+                        </div>
+                        <div class="experience-content">
+                            <h3>A Wall of Memories</h3>
+                            <p>Our guests leave notes, thoughts, and memories on our special wall - creating a living
+                                tapestry of shared experiences.</p>
+                        </div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-image">
+                            <img src="images/image-3.jpeg" class="experience-image2" alt="Balcony view with checkers and tea">
+                        </div>
+                        <div class="experience-content">
+                            <h3>Balcony Games</h3>
+                            <p>Enjoy a game of checkers with a view of the city streets.</p>
+                        </div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-image">
+                            <img src="images/image-6.jpeg" class="experience-image3" alt="Interior with turquoise doors">
+                        </div>
+                        <div class="experience-content">
+                            <h3>Cozy Reading Corners</h3>
+                            <p>Find your perfect spot to curl up with a good book.</p>
+                        </div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-image">
+                            <img src="images/image-1.jpeg"  class="experience-image4" alt="Table with book and tea">
+                        </div>
+                        <div class="experience-content">
+                            <h3>Literary Moments</h3>
+                            <p>Every table tells a story waiting to be discovered.</p>
+                        </div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-image">
+                            <img src="images/image-7.jpeg" class="experience-image5" alt="Book and vintage lamp">
+                        </div>
+                        <div class="experience-content">
+                            <h3>Vintage Charm</h3>
+                            <p>Surrounded by carefully selected decor that transports you to another time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Atmosphere Section -->
+        <section class="atmosphere">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Atmosphere</h2>
+                    <div class="divider">
+                        <img src="images/divider.svg" alt="Decorative divider">
+                    </div>
+                </div>
+                <div class="atmosphere-content">
+                    <div class="atmosphere-text">
+                        <p>At Sahhafçi, we've created a unique atmosphere that blends the comfort of home with the
+                            elegance of vintage aesthetics. Take off your shoes, sink into our comfortable seating, and
+                            let the worries of the day melt away.</p>
+                        <p>Surrounded by books, warm lighting, and thoughtfully curated decor, you'll experience the
+                            perfect balance of coziness and sophistication.</p>
+                        <div class="atmosphere-features">
+                            <div class="feature">
+                                <i class="fas fa-book"></i>
+                                <h4>Book Collection</h4>
+                                <p>Browse our carefully selected collection of books while enjoying your coffee</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-home"></i>
+                                <h4>Home Comfort</h4>
+                                <p>Take off your shoes and feel at home in our cozy space</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-coffee"></i>
+                                <h4>Quality Brews</h4>
+                                <p>Savor our selection of premium coffees and teas</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="atmosphere-gallery">
+                        <div class="gallery-item vertical">
+                            <img src="images/image-2.jpeg" alt="People on balcony">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Visit Us</h2>
+                    <div class="divider">
+                        <img src="images/divider.svg" alt="Decorative divider">
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.1733258071237!2d49.839794100000004!3d40.3700949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307ddd245e917d%3A0xb41b560b4dee0ce!2sSahhaf%C3%A7%C4%B1%20bookcafe!5e0!3m2!1sen!2sus!4v1653308145352!5m2!1sen!2sus"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="contact-info">
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Find Us</h3>
+                        <p>Sahhafçı bookcafe, Baku, Azerbaijan</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Opening Hours</h3>
+                        <p>11:00 - 23:00 Daily</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Contact Us</h3>
+                        <p>+994 51 769 91 61</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/sahhafchi-logo.png" alt="Sahhafçi Bookcafe Logo">
+                </div>
+                <div class="footer-info">
+                    <p>&copy; 2025 Sahhafçi Bookcafe. All rights reserved.</p>
+                    <p>A home away from home since 2020</p>
+                    <p class="contact-number">+994 51 769 91 61</p>
+                    <p>Working Hours: 11:00 - 23:00</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/sahhafcibookcafe/" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const SUPABASE_URL = "https://lwgcemfygziyffcjmffv.supabase.co";
+        const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx3Z2NlbWZ5Z3ppeWZmY2ptZmZ2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjEwMDU5OTgsImV4cCI6MjA3NjU4MTk5OH0.oy5EAE4etJduj-iEfseEXAmf_Ph-y1l3Fb-JZB3YRkM";
+
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        async function loadAllData() {
+            try {
+                // Fetch all tables in parallel
+                const [storyRes, bannerRes, experienceRes, atmosphereRes, sharedImagesRes] = await Promise.all([
+                    supabase.from("our_story").select("*"),
+                    supabase.from("home_banner").select("*"),
+                    supabase.from("our_experience").select("*"),
+                    supabase.from("our_atmosphere").select("*"),
+                    supabase.from("shared_image").select("*")
+                ]);
+
+                // Check for errors
+                if (storyRes.error) throw storyRes.error;
+                if (experienceRes.error) throw experienceRes.error;
+                if (atmosphereRes.error) throw atmosphereRes.error;
+                if (sharedImagesRes.error) throw sharedImagesRes.error;
+                if (bannerRes.error) throw bannerRes.error;
+
+                document.querySelector(".hero_image").src = bannerRes.data[0]?.banner_image;
+                document.querySelector(".logo img").src = sharedImagesRes.data[0]?.logo ;
+                document.querySelector(".footer-logo img").src = sharedImagesRes.data[0]?.logo ;
+                document.querySelector(".about-image .image-frame img").src = storyRes.data[0]?.our_history_image ;
+                document.querySelector(".experience-grid .experience-image .experience-image1").src = experienceRes.data[0]?.image1 ;
+                document.querySelector(".experience-grid .experience-image .experience-image2").src = experienceRes.data[0]?.image2 ;
+                document.querySelector(".experience-grid .experience-image .experience-image3").src = experienceRes.data[0]?.image3 ;
+                document.querySelector(".experience-grid .experience-image .experience-image4").src = experienceRes.data[0]?.image4 ;
+                document.querySelector(".experience-grid .experience-image .experience-image5").src = experienceRes.data[0]?.image5 ;
+                document.querySelector(".atmosphere-gallery .gallery-item img").src = atmosphereRes.data[0]?.atmosphere_image ;
+            
+            } catch (err) {
+                console.error("❌ Error loading data:", err.message);
+            }
+        }
+        loadAllData();
+    </script>
+</body>
+
+</html>
