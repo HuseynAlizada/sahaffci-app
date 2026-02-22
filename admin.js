@@ -1,10 +1,10 @@
 // ===============================
 // 🔧 Supabase Configuration
 // ===============================
-const SUPABASE_URL = "https://lwgcemfygziyffcjmffv.supabase.co";
+const SUPABASE_URL = "https://aoclihfphzsehhxhbazz.supabase.co";
 const SUPABASE_ANON_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx3Z2NlbWZ5Z3ppeWZmY2ptZmZ2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjEwMDU5OTgsImV4cCI6MjA3NjU4MTk5OH0.oy5EAE4etJduj-iEfseEXAmf_Ph-y1l3Fb-JZB3YRkM";
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  "sb_publishable_a6lSetwX8YQg9XWhF-zYgQ_MDWLCvt_";
+const supabaseClient  = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // ===============================
 // 🔐 Admin Authentication
@@ -74,18 +74,18 @@ navItems.forEach((item) => {
 });
 
 // ===============================
-// 📤 Upload image to Supabase Storage
+// 📤 Upload image to supabaseClient  Storage
 // ===============================
 async function uploadImage(file, folder = "images") {
   if (!file) return null;
   const fileName = `${folder}/${Date.now()}_${file.name}`;
-  const { data, error } = await supabase.storage.from("images").upload(fileName, file, {
+  const { data, error } = await supabaseClient .storage.from("images").upload(fileName, file, {
     cacheControl: "3600",
     upsert: true,
   });
   if (error) throw error;
 
-  const { data: publicUrlData } = supabase.storage.from("images").getPublicUrl(fileName);
+  const { data: publicUrlData } = supabaseClient .storage.from("images").getPublicUrl(fileName);
   return publicUrlData.publicUrl;
 }
 
@@ -117,7 +117,7 @@ function showImagePreview(input, imageUrl) {
 }
 
 // ===============================
-// 💾 Form Submission (Save to Supabase)
+// 💾 Form Submission (Save to supabaseClient )
 // ===============================
 const forms = document.querySelectorAll(".admin-form");
 
@@ -134,7 +134,7 @@ forms.forEach((form) => {
     });
   });
 
-  // 🔸 Submit form to Supabase
+  // 🔸 Submit form to supabaseClient 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const tableName = form.getAttribute("data-table");
@@ -157,7 +157,7 @@ forms.forEach((form) => {
 
       data.created_at = new Date().toISOString();
 
-      const { data: existingData, error: fetchError } = await supabase
+      const { data: existingData, error: fetchError } = await supabaseClient 
         .from(tableName)
         .select("id")
         .limit(1);
@@ -166,9 +166,9 @@ forms.forEach((form) => {
 
       let result;
       if (existingData && existingData.length > 0) {
-        result = await supabase.from(tableName).update(data).eq("id", existingData[0].id);
+        result = await supabaseClient .from(tableName).update(data).eq("id", existingData[0].id);
       } else {
-        result = await supabase.from(tableName).insert([data]);
+        result = await supabaseClient .from(tableName).insert([data]);
       }
 
       if (result.error) throw result.error;
@@ -191,7 +191,7 @@ loadButtons.forEach((button) => {
     const tableName = form.getAttribute("data-table");
 
     try {
-      const { data, error } = await supabase.from(tableName).select("*").limit(1).single();
+      const { data, error } = await supabaseClient .from(tableName).select("*").limit(1).single();
       if (error) throw error;
 
       form.querySelectorAll("input[type='file']").forEach((input) => {
@@ -223,7 +223,7 @@ function showStatus(message, type) {
 // 🚀 Auto-load previews on login
 // ===============================
 window.addEventListener("DOMContentLoaded", async () => {
-  console.log("✅ Admin panel ready and Supabase connected.");
+  console.log("✅ Admin panel ready and supabaseClient  connected.");
   if (isAuthenticated) {
     const tables = [
       "home_banner",
@@ -236,7 +236,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     for (const table of tables) {
       try {
-        const { data } = await supabase.from(table).select("*").limit(1).single();
+        const { data } = await supabaseClient .from(table).select("*").limit(1).single();
         if (data) {
           const form = document.querySelector(`form[data-table="${table}"]`);
           if (form) {

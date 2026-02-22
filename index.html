@@ -63,12 +63,12 @@
                 </div>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>Sahhafçı Bookcafe sadə bir ideyadan doğdu: evdəki kimi hiss etdiyiniz bir məkan yaratmaq. 
-                        Təsisçimiz öz mənzilini rahatlığın ön planda olduğu unikal bir kafeyə çevirdi.</p>
-                        <p>Sahhafçıyə daxil olanda ayaqqabılarınızı çıxarmağa dəvət edirik – evdəki kimi rahat olun. 
-                        Vintage dekor və səmimi atmosfer sizi xarici dünyadan sakit bir qaçışa aparacaq.</p>
-                        <p>Məkanda hər künc sizin rahat, istirahətli və ilhamlı olmanız üçün dizayn edilib – 
-                        istər menyumuzu dadmaq, istər kitab oxumaq, istərsə də sadəcə dincəlmək üçün gəlin.</p>
+                        <p>Sahhafçı Bookcafe sadə bir ideyadan doğdu: evdəki kimi hiss etdiyiniz bir məkan yaratmaq.
+                            Təsisçimiz öz mənzilini rahatlığın ön planda olduğu unikal bir kafeyə çevirdi.</p>
+                        <p>Sahhafçıyə daxil olanda ayaqqabılarınızı çıxarmağa dəvət edirik – evdəki kimi rahat olun.
+                            Vintage dekor və səmimi atmosfer sizi xarici dünyadan sakit bir qaçışa aparacaq.</p>
+                        <p>Məkanda hər künc sizin rahat, istirahətli və ilhamlı olmanız üçün dizayn edilib –
+                            istər menyumuzu dadmaq, istər kitab oxumaq, istərsə də sadəcə dincəlmək üçün gəlin.</p>
                         <a href="menu.html" class="btn btn-outline">Menyumuzu Baxın</a>
                     </div>
                     <div class="about-image">
@@ -97,7 +97,8 @@
                         </div>
                         <div class="experience-content">
                             <h3>Xatirələr Divarı</h3>
-                            <p>Qonaqlarımız öz qeydlərini və xatirələrini xüsusi divarımızda paylaşır – paylaşılan təcrübələrin yaşayan toxuması yaranır.</p>
+                            <p>Qonaqlarımız öz qeydlərini və xatirələrini xüsusi divarımızda paylaşır – paylaşılan
+                                təcrübələrin yaşayan toxuması yaranır.</p>
                         </div>
                     </div>
                     <div class="experience-item">
@@ -151,9 +152,10 @@
                 </div>
                 <div class="atmosphere-content">
                     <div class="atmosphere-text">
-                        <p>Sahhafçıdə ev rahatlığını vintage estetiklə birləşdirən unikal bir atmosfer yaratdıq. 
-                        Ayaqqabılarınızı çıxarın, rahat oturun və günün qayğılarını unutun.</p>
-                        <p>Kitablar, isti işıqlandırma və düşünülmüş dekor əhatəsində, rahatlıq və zərifliyin ideal balansını yaşayın.</p>
+                        <p>Sahhafçıdə ev rahatlığını vintage estetiklə birləşdirən unikal bir atmosfer yaratdıq.
+                            Ayaqqabılarınızı çıxarın, rahat oturun və günün qayğılarını unutun.</p>
+                        <p>Kitablar, isti işıqlandırma və düşünülmüş dekor əhatəsində, rahatlıq və zərifliyin ideal
+                            balansını yaşayın.</p>
                         <div class="atmosphere-features">
                             <div class="feature">
                                 <i class="fas fa-book"></i>
@@ -240,19 +242,19 @@
 
     <script src="script.js"></script>
     <script>
-        const SUPABASE_URL = "https://lwgcemfygziyffcjmffv.supabase.co";
-        const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx3Z2NlbWZ5Z3ppeWZmY2ptZmZ2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjEwMDU5OTgsImV4cCI6MjA3NjU4MTk5OH0.oy5EAE4etJduj-iEfseEXAmf_Ph-y1l3Fb-JZB3YRkM";
-
-        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        const SUPABASE_URL = "https://aoclihfphzsehhxhbazz.supabase.co";
+        const SUPABASE_ANON_KEY =
+            "sb_publishable_a6lSetwX8YQg9XWhF-zYgQ_MDWLCvt_";
+        const supabaseClient  = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
         async function loadAllData() {
             try {
                 const [storyRes, bannerRes, experienceRes, atmosphereRes, sharedImagesRes] = await Promise.all([
-                    supabase.from("our_story").select("*"),
-                    supabase.from("home_banner").select("*"),
-                    supabase.from("our_experience").select("*"),
-                    supabase.from("our_atmosphere").select("*"),
-                    supabase.from("shared_image").select("*")
+                    supabaseClient .from("our_story").select("*"),
+                    supabaseClient .from("home_banner").select("*"),
+                    supabaseClient .from("our_experience").select("*"),
+                    supabaseClient .from("our_atmosphere").select("*"),
+                    supabaseClient .from("shared_image").select("*")
                 ]);
 
                 if (storyRes.error) throw storyRes.error;
@@ -262,16 +264,17 @@
                 if (bannerRes.error) throw bannerRes.error;
 
                 document.querySelector(".hero_image").src = bannerRes.data[0]?.banner_image;
-                document.querySelector(".logo img").src = sharedImagesRes.data[0]?.logo ;
-                document.querySelector(".footer-logo img").src = sharedImagesRes.data[0]?.logo ;
-                document.querySelector(".about-image .image-frame img").src = storyRes.data[0]?.our_history_image ;
-                document.querySelector(".experience-grid .experience-image .experience-image1").src = experienceRes.data[0]?.image1 ;
-                document.querySelector(".experience-grid .experience-image .experience-image2").src = experienceRes.data[0]?.image2 ;
-                document.querySelector(".experience-grid .experience-image .experience-image3").src = experienceRes.data[0]?.image3 ;
-                document.querySelector(".experience-grid .experience-image .experience-image4").src = experienceRes.data[0]?.image4 ;
-                document.querySelector(".experience-grid .experience-image .experience-image5").src = experienceRes.data[0]?.image5 ;
-                document.querySelector(".atmosphere-gallery .gallery-item img").src = atmosphereRes.data[0]?.atmosphere_image ;
-            
+                console.log("Hero image URL:", bannerRes.data[0]?.banner_image);
+                document.querySelector(".logo img").src = sharedImagesRes.data[0]?.logo;
+                document.querySelector(".footer-logo img").src = sharedImagesRes.data[0]?.logo;
+                document.querySelector(".about-image .image-frame img").src = storyRes.data[0]?.our_history_image;
+                document.querySelector(".experience-grid .experience-image .experience-image1").src = experienceRes.data[0]?.image1;
+                document.querySelector(".experience-grid .experience-image .experience-image2").src = experienceRes.data[0]?.image2;
+                document.querySelector(".experience-grid .experience-image .experience-image3").src = experienceRes.data[0]?.image3;
+                document.querySelector(".experience-grid .experience-image .experience-image4").src = experienceRes.data[0]?.image4;
+                document.querySelector(".experience-grid .experience-image .experience-image5").src = experienceRes.data[0]?.image5;
+                document.querySelector(".atmosphere-gallery .gallery-item img").src = atmosphereRes.data[0]?.atmosphere_image;
+
             } catch (err) {
                 console.error("❌ Məlumat yüklənərkən xəta baş verdi:", err.message);
             }
